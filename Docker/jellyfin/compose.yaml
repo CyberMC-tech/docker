@@ -1,0 +1,16 @@
+version: "3"
+services:
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
+    network_mode: 'host'
+    volumes:
+      - /home/elliot/Public/jellyfin/config:/config
+      - /home/elliot/Public/jellyfin/cache:/cache
+      - /home/elliot/Public/jellyfin/media:/media
+
+    ports:
+      - "8096:8096"
+      - "8920:8920"
+
+    restart: 'unless-stopped'
